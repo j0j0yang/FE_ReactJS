@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html>
     <body>
+        <div id="here"></div>
     </body>
+
+    <!-- React JS 설치 코드 URL -->
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+
     <script>
+        // 요소 생성 by.ReactJS
+        const span = React.createElement(
+            "span", 
+            {id:"just-span", style: {color: 'red'}}, 
+            "Hello i'm span"
+        );
+        // body 이동 by.ReactCOM
+        const here = document.getElementById("here");
+        ReactDOM.render(span, here);
     </script>
 </html>
