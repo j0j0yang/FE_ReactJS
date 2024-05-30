@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="here"></div>
+    </body>
+
+    <!-- React JS 설치 코드 URL -->
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+
+    <script>
+        // 요소 띄울 위치 컴포넌트
+        const here = document.getElementById("here");
+
+        // 요소 생성 by.ReactJS
+        const span = React.createElement(
+            "h3", 
+            {id:"just-span", style: {color: 'red'}}, 
+            "Hello i'm span"
+        );
+
+        /* 
+        화면 출력 by.ReactCOM
+            ReactDOM.render(span, here);
+            ReactDOM.render(btn, here);
+        */
+
+        // (+) 버튼 생성 후, span 요소와 함께 화면 출력
+        const btn = React.createElement(
+            "button",
+            {
+                onclick: () => console.log('im clicked')
+            },
+            "Click me"
+        ); 
+        // (+) 여러 요소 포함하는 요소 생성: content에 요소 배열 작성!
+        const container = React.createElement(
+            "div",
+            null,
+            [span, btn]
+        );
+        ReactDOM.render(container, here);
+    </script>
+</html>
